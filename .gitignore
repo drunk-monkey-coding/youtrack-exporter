@@ -1,0 +1,6 @@
+.idea/
+dest/
+vendor/
+.env
+!.gitkeep
+!dest/.gitkeep

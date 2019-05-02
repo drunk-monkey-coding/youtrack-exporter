@@ -1,0 +1,36 @@
+{
+    "name": "drunk.monkey.coding/youtrack.exporter",
+    "type": "project",
+    "description": "Project exporter for youtrack. Extracts all data to a folder",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flaviu Chelaru",
+            "email": "flaviu.chelaru@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "cybercog/youtrack-php-sdk": "^4.0",
+        "symfony/console": "^4.2",
+        "vlucas/phpdotenv": "^3.3"
+    },
+    "require-dev": {
+        "localheinz/composer-normalize": "^1.1",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "DrunkMonkeyCoding\\YouTrackExporter\\": "app/"
+        }
+    },
+    "minimum-stability": "stable",
+    "bin": [
+        "bin/exporter"
+    ],
+    "scripts": {
+        "post-autoload-dump": [
+            "@composer normalize"
+        ]
+    }
+}

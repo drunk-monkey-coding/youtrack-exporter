@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+use DrunkMonkeyCoding\YouTrackExporter\ExportCommand;
+use Dotenv\Dotenv;
+use Symfony\Component\Console\Application;
+
+ini_set('error_log', 'php://stdout');
+require_once __DIR__ . '/../vendor/autoload.php';
+
+try {
+    Dotenv::create(__DIR__ . '/../')->load();
+    
+    $app = new Application('YouTrack Exporter', '1.0.0');
+    $app->add(new ExportCommand());
+    $app->run();
+} catch (Exception $exception) {
+    print $exception;
+}
